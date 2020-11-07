@@ -37,6 +37,7 @@ def app():
                         'time_signature': af['time_signature']
                     }
             test_df = pd.DataFrame(df_dict, index=[0])
+            print(f'Track URI Found: {track_uri}')
             filename = 'rf_model.sav'
             loaded_model = pickle.load(open(filename, 'rb'))
             result = loaded_model.predict(test_df)[0]
